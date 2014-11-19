@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
+      flash[:notice] = "Article Created!"
       redirect_to article_url(@article)
     else
       flash[:errors] = @article.errors.full_messages
@@ -12,6 +13,7 @@ class ArticlesController < ApplicationController
   def destroy
     article = Article.find(params[:id])
     article.destroy!
+    flash[:notice] = "Article Destroyed!"
     redirect_to articles_url
   end
 
@@ -36,6 +38,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
+      flash[:notice] = "Article Updated!"
       redirect_to article_url(@article)
     else
       flash[:errors] = @article.errors.full_messages
