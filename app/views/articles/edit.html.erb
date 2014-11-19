@@ -1,4 +1,4 @@
-<h1>Create a New Article</h1>
+<h1>Edit an Article</h1>
 
 <%= form_for(@article) do |f| %>
   <ul>
@@ -8,11 +8,11 @@
   </ul>
   <p>
     <%= f.label :title %><br />
-    <input type = "text" name = "article[title]">
+    <%= f.text_field :title %>
   </p>
   <p>
     <%= f.label :body %><br />
-    <textarea name = "article[body]">Write your blog here!</textarea>
+    <%= f.text_area :body %>
   </p>
   <p>
     <%= f.submit %>
