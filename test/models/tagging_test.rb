@@ -1,17 +1,17 @@
 # == Schema Information
 #
-# Table name: articles
+# Table name: taggings
 #
 #  id         :integer          not null, primary key
+#  tag_id     :integer
+#  article_id :integer
 #  created_at :datetime
 #  updated_at :datetime
-#  title      :string(255)
-#  body       :text
 #
 
 require 'test_helper'
 
-class ArticleTest < ActiveSupport::TestCase
+class TaggingTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
